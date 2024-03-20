@@ -71,8 +71,8 @@ end
 local GetRenderProperty, SetRenderProperty = function(Object, Property)
 	return Object[Property]
 end, function(Object, Property, Value)
-	if tostring(Property) == "Enabled" then return end
-	Object[Property] = Value
+	
+	pcall(function() Object[Property] = Value end)
 end
 
 local Connect, Disconnect = __index(game, "DescendantAdded").Connect
