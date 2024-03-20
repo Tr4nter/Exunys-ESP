@@ -71,6 +71,7 @@ end
 local GetRenderProperty, SetRenderProperty = function(Object, Property)
 	return Object[Property]
 end, function(Object, Property, Value)
+	if Property == "Enabled" then return end
 	Object[Property] = Value
 end
 
