@@ -1285,7 +1285,11 @@ local UtilityFunctions = {
 				end
 
 				if Settings.TeamCheck then
-					Checks.Team = __index(__index(__index(Player, "PlayerData"), "TeamValue"), "Value") ~= __index(__index(__index(LocalPlayer, "PlayerData"), "TeamValue"), "Value")
+					if game.PlaceId == 633284182 then 
+						Checks.Team = __index(__index(__index(Player, "PlayerData"), "TeamValue"), "Value") ~= __index(__index(__index(LocalPlayer, "PlayerData"), "TeamValue"), "Value")
+					else
+						Checks.Team = __index(Player, TeamCheckOption) ~= __index(LocalPlayer, TeamCheckOption)
+					end
 				end
 			else
 				Checks.Alive = false
