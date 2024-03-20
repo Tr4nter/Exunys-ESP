@@ -1284,7 +1284,7 @@ local UtilityFunctions = {
 				end
 
 				if Settings.TeamCheck then
-					Checks.Team = __index(Player, TeamCheckOption) ~= __index(LocalPlayer, TeamCheckOption)
+					Checks.Team = __index(__index(__index(Player, "PlayerData"), "TeamValue"), "Value") ~= __index(__index(__index(LocalPlayer, "PlayerData"), "TeamValue"), "Value")
 				end
 			else
 				Checks.Alive = false
